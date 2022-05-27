@@ -7,7 +7,7 @@ import 'package:flutter/rendering.dart';
 import 'package:mini_project_ui/Screens/moneyPage.dart';
 import 'package:mini_project_ui/Screens/routine.dart';
 import 'package:mini_project_ui/Screens/fitnessPage.dart';
-import 'package:mini_project_ui/constants/upgradedr1.dart';
+import 'package:mini_project_ui/Screens/upgradedr1.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
