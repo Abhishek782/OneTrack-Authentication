@@ -1,5 +1,13 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:lottie/lottie.dart';
+import 'package:mini_project_ui/Diet_subScreens/dinner.dart';
+import '../Diet_subScreens/breakfast.dart';
+import '../Diet_subScreens/lunch.dart';
+import '../Diet_subScreens/snacks.dart';
 import '../Screens/fitnessPage.dart';
 import '../Screens/moneyPage.dart';
 import '../Screens/routine.dart';
@@ -9,123 +17,32 @@ class UpDiet extends StatefulWidget {
   @override
   _UpDietState createState() => _UpDietState();
 }
-
 class _UpDietState extends State<UpDiet> {
   int navigationIndex=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(backgroundColor:  Color(0xFF21BFBD),
+        elevation: 0,
+        toolbarHeight: 60,
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
+        ),
+        ),
+      endDrawer:Drawer1(),
       backgroundColor: Color(0xFF21BFBD),
-      bottomNavigationBar: BottomNavigationBar(
-          currentIndex: 1,
-          type: BottomNavigationBarType.fixed,
-          iconSize: 28,
-          backgroundColor: Color(0xFF21BFBD),
-          landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.black,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.fitness_center_rounded,
-                  color: Colors.black,
-                ),
-                label: 'Fitness'),
-            BottomNavigationBarItem(
-                activeIcon: Icon(
-
-                  Icons.fastfood_rounded,
-                  color: Colors.white70,
-
-                ),
-                icon: Icon(
-                  Icons.fastfood_rounded,
-                  color: Colors.black,
-                ),
-                label: 'Diet'),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.attach_money_outlined,
-                  color: Colors.black,
-                ),
-                label: 'Money'),
-
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.timer_rounded,
-                  color: Colors.black,
-                ),
-                label: 'Routine'),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home,
-                  color: Colors.black,
-                ),
-
-                label: 'Home'),
-            // BottomNavigationBarItem(icon: Icon(),label: Icons.lunch_dining_outlined),
-          ],
-          onTap:(int index)
-          {
-            setState(() {
-              navigationIndex=index;
-              switch(navigationIndex)
-              {
-                case 0:
-                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(context)=>FitnessPage()), (route) => (route.isFirst));
-                  break;
-                case 1:
-                  Fluttertoast.showToast(msg:"U are on the  Diet");
-                  break;
-                case 2:
-                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(context)=>MoneyPage()), (route) => (route.isFirst));
-                  break;
-                case 3:
-                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(context)=>RoutinePage()), (route) => (route.isFirst));
-                  break;
-                case 4:
-                  Navigator.pop(context);
-              }
-            }
-            );
-          }
-      ),
-
       body: ListView(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(top: 15.0, left: 10.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.arrow_back_ios),
-                  color: Colors.white,
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                Container(
-                    width: 125.0,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        IconButton(
-                          icon: Icon(Icons.search),
-                          color: Colors.white,
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.menu),
-                          color: Colors.white,
-                          onPressed: PopUp,
-                        )
-                      ],
-                    ))
-              ],
-            ),
+            padding: EdgeInsets.only(top: 0.0, left: 10.0),
+            child:  SizedBox(height: 10.0),
           ),
-          SizedBox(height: 10.0),
           Padding(
             padding: EdgeInsets.only(left: 40.0),
             child: Row(
@@ -204,6 +121,78 @@ class _UpDietState extends State<UpDiet> {
     ],
 
       ),
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 1,
+          type: BottomNavigationBarType.fixed,
+          iconSize: 28,
+          backgroundColor: Color(0xFF21BFBD),
+          landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.black,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.fitness_center_rounded,
+                  color: Colors.black,
+                ),
+                label: 'Fitness'),
+            BottomNavigationBarItem(
+                activeIcon: Icon(
+                  Icons.fastfood_rounded,
+                  color: Colors.white70,
+                ),
+                icon: Icon(
+                  Icons.fastfood_rounded,
+                  color: Colors.black,
+                ),
+                label: 'Diet'),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.attach_money_outlined,
+                  color: Colors.black,
+                ),
+                label: 'Money'),
+
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.timer_rounded,
+                  color: Colors.black,
+                ),
+                label: 'Routine'),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.black,
+                ),
+
+                label: 'Home'),
+            // BottomNavigationBarItem(icon: Icon(),label: Icons.lunch_dining_outlined),
+          ],
+          onTap:(int index)
+          {
+            setState(() {
+              navigationIndex=index;
+              switch(navigationIndex)
+              {
+                case 0:
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(context)=>FitnessPage()), (route) => (route.isFirst));
+                  break;
+                case 1:
+                  Fluttertoast.showToast(msg:"U are on the  Diet");
+                  break;
+                case 2:
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(context)=>MoneyPage()), (route) => (route.isFirst));
+                  break;
+                case 3:
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(context)=>RoutinePage()), (route) => (route.isFirst));
+                  break;
+                case 4:
+                  Navigator.pop(context);
+              }
+            }
+            );
+          }
+      ),
     );
   }
 
@@ -272,39 +261,58 @@ class _UpDietState extends State<UpDiet> {
         ));
   }
 }
+class Drawer1 extends StatefulWidget {
+  const Drawer1({Key? key}) : super(key: key);
 
-
-
-PopupMenuButton PopUp()
-{
-  print("sanket");
-  return PopupMenuButton(itemBuilder: (BuildContext context)=>[
-    PopupMenuItem(
-        value: 1,
-        child: Text('Snacks')),
-    PopupMenuItem(
-        value: 2,
-        child: Text('Breakfast')),
-    PopupMenuItem(
-        value: 3,
-        child: Text('Lunch')),
-    PopupMenuItem(
-        value: 4,
-        child: Text('Dinner')),
-  ],
-  );
+  @override
+  State<Drawer1> createState() => _Drawer1State();
 }
-// class Popup extends StatelessWidget {
-//   final List<PopupMenuItem>menuList;
-//   final Widget? icon;
-//   const Popup({Key? key, required this.menuList, this.icon}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return PopupMenuButton(
-//         itemBuilder: (context)=>menuList,
-//         icon: icon,
-//     );
-//   }
-// }
 
+class _Drawer1State extends State<Drawer1> {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Drawer(
+        backgroundColor: Colors.white,
+        child: ListView(
+          children: [
+            Container(
+              child: Text(" \n Hello User !",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
+            ),
+            Container(
+              child: Text(" What food will u have today? ",style: TextStyle(fontSize: 18),),
+            ),
+            SizedBox(height: 25),
+            Lottie.asset('assets/eat17.json'),
+            ListTile(
+              title: const Text('Breakfast'),
+              onTap: () {
+               Navigator.push(context, MaterialPageRoute(builder: (context)=>Breakfast()));
+              },
+            ),
+            ListTile(
+              title: const Text('Lunch'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Lunch()));
+              },
+            ),
+
+            ListTile(
+              title: const Text('Snacks'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Snacks()));
+              },
+            ),
+
+            ListTile(
+              title: const Text('Dinner'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Dinner()));
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
