@@ -8,10 +8,10 @@ import 'package:mini_project_ui/Diet_subScreens/dinner.dart';
 import '../Diet_subScreens/breakfast.dart';
 import '../Diet_subScreens/lunch.dart';
 import '../Diet_subScreens/snacks.dart';
-import '../Screens/fitnessPage.dart';
-import '../Screens/moneyPage.dart';
-import '../Screens/routine.dart';
-import 'detailspage.dart';
+import 'fitnessPage.dart';
+import 'moneyPage.dart';
+import 'routine.dart';
+import '../constants/detailspage.dart';
 
 class UpDiet extends StatefulWidget {
   @override

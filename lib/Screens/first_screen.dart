@@ -7,7 +7,7 @@ import 'package:flutter/rendering.dart';
 import 'package:mini_project_ui/Screens/moneyPage.dart';
 import 'package:mini_project_ui/Screens/routine.dart';
 import 'package:mini_project_ui/Screens/fitnessPage.dart';
-import 'package:mini_project_ui/constants/upgradedr1.dart';
+import 'package:mini_project_ui/Screens/upgradedr1.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -72,7 +72,7 @@ class _MyAppState extends State<MyApp> {
                       borderRadius: BorderRadius.all(Radius.circular(10.0))),
                 ),
                 Container(
-                  height: 208,
+                  height: MediaQuery.of(context).size.height*0.25,
                   // width: 100,
                   margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
                   decoration: BoxDecoration(
@@ -132,7 +132,7 @@ class _MyAppState extends State<MyApp> {
                   height: 15,
                 ),
                 Container(
-                  height: 208,
+                  height: MediaQuery.of(context).size.height*0.25,
                   // width: 100,
                   margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
                   decoration: BoxDecoration(
@@ -162,7 +162,7 @@ class _MyAppState extends State<MyApp> {
                   height: 15,
                 ),
                 Container(
-                  height: 208,
+                  height: MediaQuery.of(context).size.height*0.25,
                   // width: 100,
                   margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
                   decoration: BoxDecoration(
