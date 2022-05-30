@@ -1,7 +1,7 @@
 import 'list_item.dart';
 
 final List<ListItem> listItems = [
-  ListItem(title: "Study karana padega na bhai",
+  ListItem(title: "work 10",
       urlImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Taj_Mahal_Front.JPG/1200px-Taj_Mahal_Front.JPG?20120915083330'),
   ListItem(title: "Attending the live meet",urlImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Taj_Mahal_Front.JPG/1200px-Taj_Mahal_Front.JPG?20120915083330'),
   ListItem(title: "work1",urlImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Taj_Mahal_Front.JPG/1200px-Taj_Mahal_Front.JPG?20120915083330'),

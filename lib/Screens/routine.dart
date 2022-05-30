@@ -185,18 +185,19 @@ class _RoutinePageState extends State<RoutinePage> {
 
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-        appBar: AppBar(
-            backgroundColor: Color(0xFF21BFBD),
-            elevation: 0,
-            actions: [
-              Icon(
-                Icons.menu,
-                size : 40,
-              )
-            ],
-
-
-            title: Center(child: Text("Daily Routine",))
+        appBar: AppBar(backgroundColor:  Color(0xFF21BFBD),
+          elevation: 0,
+          title: Center(child: Text("Daily Routine         ",style: TextStyle(fontSize: 25.0),)),
+          toolbarHeight: 60,
+          leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
+          ),
         ),
         body: SingleChildScrollView(
           child: Column(
