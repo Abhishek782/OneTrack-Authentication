@@ -27,6 +27,19 @@ class _FitnessPageState extends State<FitnessPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xFF21BFBD),
+        appBar: AppBar(backgroundColor:  Color(0xFF21BFBD),
+          elevation: 0,
+          toolbarHeight: 60,
+          leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
+          ),
+        ),
         body: Stack(
           children: <Widget>[
             // Container(
@@ -47,52 +60,52 @@ class _FitnessPageState extends State<FitnessPage> {
             // //       width: MediaQuery.of(context).size.width,
             // //
             // color: Colors.transparent),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 15.0, left: 10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(Icons.arrow_back_ios),
-                    color: Colors.white,
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  Container(
-                      width: 125.0,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          IconButton(
-                            icon: Icon(Icons.search),
-                            color: Colors.white,
-                            onPressed: () {},
-                          ),
-                          IconButton(
-                            icon: Icon(Icons.menu),
-                            color: Colors.white,
-                            onPressed: () {},
-                          )
-                        ],
-                      ))
-                ],
-              ),
-            ),
+            // SizedBox(
+            //   height: 10,
+            // ),
+            // Padding(
+            //   padding: EdgeInsets.only(top: 15.0, left: 10.0),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: <Widget>[
+            //       IconButton(
+            //         icon: Icon(Icons.arrow_back_ios),
+            //         color: Colors.white,
+            //         onPressed: () {
+            //           Navigator.pop(context);
+            //         },
+            //       ),
+            //       Container(
+            //           width: 125.0,
+            //           child: Row(
+            //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //             children: <Widget>[
+            //               IconButton(
+            //                 icon: Icon(Icons.search),
+            //                 color: Colors.white,
+            //                 onPressed: () {},
+            //               ),
+            //               IconButton(
+            //                 icon: Icon(Icons.menu),
+            //                 color: Colors.white,
+            //                 onPressed: () {},
+            //               )
+            //             ],
+            //           ))
+            //     ],
+            //   ),
+            // ),
             // SizedBox(height: 50.0),
             Padding(
               padding: EdgeInsets.only(left: 40.0),
               child: Row(
                 children: <Widget>[
-                  Text('\n\nFitness',
+                  Text('Fitness',
                       style: TextStyle(
                           fontFamily: 'Montserrat',
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25.0)),
+                          fontSize: 35.0)),
                   SizedBox(width: 5.0),
                   // Text('\n\nfood items',
                   //     style: TextStyle(
@@ -103,7 +116,7 @@ class _FitnessPageState extends State<FitnessPage> {
               ),
             ),
             Positioned(
-                top: 115.0,
+                top: 88.0,
                 child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -116,130 +129,133 @@ class _FitnessPageState extends State<FitnessPage> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      SizedBox(
-                        height: 150,
-                      ),
-
-                      SizedBox(
-                        width: 40.0,
-                        height: 40.0,
-                      ),
-                      Expanded(
-                        child: GridView.count(
-                          crossAxisCount: 2,
-                          childAspectRatio: .85,
-                          crossAxisSpacing: 20,
-                          mainAxisSpacing: 20,
-                          children: <Widget>[
-                            InkWell(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('images/yog.jpg'),
+                      Padding(padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 80),),
+                      // SizedBox(
+                      //   height: 150,
+                      // ),
+                      //
+                      // SizedBox(
+                      //   width: 40.0,
+                      //   height: 40.0,
+                      // ),
+                      Container(
+                        child: Expanded(
+                          child: GridView.count(
+                            crossAxisCount: 2,
+                            childAspectRatio: .85,
+                            crossAxisSpacing: 20,
+                            mainAxisSpacing: 20,
+                            children: <Widget>[
+                              InkWell(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage('images/yog.jpg'),
+                                    ),
+                                    color: Colors.white,
+                                    border: Border(
+                                      top: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                      left: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                      right: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                      bottom: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
                                   ),
-                                  color: Colors.white,
-                                  border: Border(
-                                    top: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                    left: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                    right: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                    bottom: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => YogaPage()));
+                                },
                               ),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => YogaPage()));
-                              },
-                            ),
-                            InkWell(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('images/run.jpg'),
+                              InkWell(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage('images/run.jpg'),
+                                    ),
+                                    color: Colors.white,
+                                    border: Border(
+                                      top: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                      left: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                      right: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                      bottom: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
                                   ),
-                                  color: Colors.white,
-                                  border: Border(
-                                    top: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                    left: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                    right: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                    bottom: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                  ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => CardioPage()));
+                                },
                               ),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => CardioPage()));
-                              },
-                            ),
-                            InkWell(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage('images/jump.jpg')),
-                                  color: Colors.white,
-                                  border: Border(
-                                    top: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                    left: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                    right: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                    bottom: BorderSide(
-                                        width: 1.0, color: Colors.black12),
+                              InkWell(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage('images/jump.jpg')),
+                                    color: Colors.white,
+                                    border: Border(
+                                      top: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                      left: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                      right: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                      bottom: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => SportsPage()));
+                                },
                               ),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => SportsPage()));
-                              },
-                            ),
-                            InkWell(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage('images/weight.jpg')),
-                                  color: Colors.white,
-                                  border: Border(
-                                    top: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                    left: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                    right: BorderSide(
-                                        width: 1.0, color: Colors.black12),
-                                    bottom: BorderSide(
-                                        width: 1.0, color: Colors.black12),
+                              InkWell(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage('images/weight.jpg')),
+                                    color: Colors.white,
+                                    border: Border(
+                                      top: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                      left: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                      right: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                      bottom: BorderSide(
+                                          width: 1.0, color: Colors.black12),
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0),
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => WorkoutPage()));
+                                },
                               ),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => WorkoutPage()));
-                              },
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       // Expanded(child: GridView.count(crossAxisCount: 1,
