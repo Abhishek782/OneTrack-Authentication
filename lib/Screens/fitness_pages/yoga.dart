@@ -91,13 +91,36 @@ class _YogaPageState extends State<YogaPage> {
                       Container(
                         height: MediaQuery.of(context).size.height - 250.0,
                         child: ListView(children: [
-                          _buildPositions(context,'bhujangasana', 'Bhujangasana','For digestion'),
-                          _buildPositions(context,'padmasana', 'Padmasana','For fitness'),
-                          _buildPositions(context,'shirshasana', 'Shirshasana','For digestion'),
-                          _buildPositions(context,'vrikshsana', 'Vrikshasana','For digestion'),
-                          _buildPositions(context,'navasana', 'Navasana','For digestion'),
-                          _buildPositions(context,'balasana', 'Balasana','For digestion'),
-                          _buildPositions(context,'kakasana', 'Kakasana','For digestion'),
+                          _buildPositions(context,'bhujangasana', 'Bhujangasana','For digestion','\n1.Lie flat on your belly with the top of your feet facing downwards.\n'
+                              '\n2.Bend your elbows and spread your palms beside the lowest rib.\n'
+                              '\n3.As you inhale, press your palms firmly on the mat and slowly lift your torso, hips, and knees off the mat.\n'
+                              '\n4.You may look straight ahead or tilt your head slightly backward.\n'
+                              '\n5.Stay in this pose for a couple of breaths.\n'),
+                          _buildPositions(context,'shirshasana', 'Shirshasana','For fitness','1.The head and the hands are on the floor and form a triangle. Place the crown of the head between the interlocked fingers.\n'
+                              '\n2.Slowly, balance the head on the fingers.\n'
+                              '\n3.Lift the knees and glutes off the floor and straighten them.\n'
+                              '\n4.Bend the knees, keeping the heels near the buttocks, and slowly straighten the hips so that the thighs are perpendicular to the floor.\n'),
+                          _buildPositions(context,'padmasana', 'Padmasana','For digestion','1.Sit  with the legs stretched out in front of you while keeping the spine erect.\n'
+                              '\n2.Bend the right knee and place it on the left thigh.  and repeat the same step with the other leg.\n'
+                              '\n3.With both the legs crossed and feet placed on opposite thighs, place your hands on the knees in the mudra position.\n'
+                              '\n4.Keep the head straight and spine erect, and continue with long gentle breaths in and out.\n'),
+                          _buildPositions(context,'navasana', 'Navasana','For digestion','1.Sit with your knees bent, feet on the floor.\n'
+                              '\n2.Place your hands behind your knees, lift the chest, engaging the back muscles as you inhale.\n'
+                              '\n3.Engage your inner thighs and draw your lower belly in and up\n'
+                              '\n4.Tip back on the back of your sitting bones and lift your feet up to about knee height, toes spread out\n'
+                              '\n5.Bring your arms parallel to the floor\n'
+                          ),
+                          _buildPositions(context,'vrikshsana', 'Vrikshasana','For digestion','1.Bend your right knee and place the right foot high up on your left thigh.\n'
+                              '\n2.Once you are well balanced, take a deep breath in, gracefully raise your arms over your head from the side, and bring your palms together in ‘Namaste’ mudra (hands-folded position).\n'
+                              '\n3.Look straight ahead in front of you, at a distant object.\n'),
+                          _buildPositions(context,'balasana', 'Balasana','For digestion','1.Kneel down on the floor & sit on your buttocks.\n'
+                              '\n2.Keep your big toes touching each other.\n'
+                              '\n3.Place your knees hip-width apart and inhale.\n'
+                              '\n4.Now bend forward and exhale as you lay your torso between your thighs and swing your hands forward.\n'),
+                          _buildPositions(context,'kakasana', 'Kakasana','For digestion','1.Squat on the floor. Keep both your feet and your knees apart.\n'
+                              '\n2.Stretch your arm to place your palms flat against the floor in front. Keep your fingers spread. Bend your arms slightly at the elbows.\n'
+                              '\n3.Raise your hips so that your body tilts forward, bringing your head down halfway.\n'
+                              '\n4.Let your knees be supported by your upper arms.\n'),
                           // _buildPositions(context,'4', 'Medu vada(1pc)'),
                           // _buildPositions(context,'Dal', 'Dal'),
                           // _buildPositions(context,'rice', 'Rice'),
@@ -192,7 +215,7 @@ class _YogaPageState extends State<YogaPage> {
                   Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(context)=>FitnessPage()), (route) => (route.isFirst));
                   break;
                 case 1:
-                  // Fluttertoast.showToast(msg:"U are on the  Diet");
+                // Fluttertoast.showToast(msg:"U are on the  Diet");
                   break;
                 case 2:
                   Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(context)=>MoneyPage()), (route) => (route.isFirst));
@@ -288,16 +311,16 @@ class _YogaListState extends State<YogaList> {
         ));
   }
 }
-Widget _buildPositions(BuildContext context, String img, String yogaName,String YogSubtitle) {
+Widget _buildPositions(BuildContext context, String img, String yogaName,String YogSubtitle, String info) {
 
   return Padding(
       padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
       child: InkWell(
-        onTap: () {
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => YogaDetailsPage(heroTag: "images/$img.jpg", yogaName: yogaName)
-          ));
-        },
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => YogaDetailsPage(heroTag: "images/$img.jpg", yogaName: yogaName,info : info)
+            ));
+          },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -342,7 +365,7 @@ Widget _buildPositions(BuildContext context, String img, String yogaName,String 
                   color: Colors.black,
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => YogaDetailsPage(heroTag: "images/$img.jpg", yogaName: yogaName)
+                        builder: (context) => YogaDetailsPage(heroTag: "images/$img.jpg", yogaName: yogaName,info: info)
                     ));
                   }
               )

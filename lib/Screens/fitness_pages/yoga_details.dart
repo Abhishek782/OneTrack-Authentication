@@ -9,8 +9,9 @@ import '../fitnessPage.dart';
 class YogaDetailsPage extends StatefulWidget {
   final heroTag;
   final yogaName;
+  final info;
 
-  YogaDetailsPage({this.heroTag, this.yogaName});
+  YogaDetailsPage({this.heroTag, this.yogaName,this.info});
 
   @override
   _YogaDetailsPageState createState() => _YogaDetailsPageState();
@@ -112,9 +113,9 @@ class _YogaDetailsPageState extends State<YogaDetailsPage> {
                                 onTap: () {
                                   setState(() {
 
-                                      // inputCal-=widget.foodCal;
+                                    // inputCal-=widget.foodCal;
 
-                                      if(counter>0 )counter--;
+                                    if(counter>0 )counter--;
 
                                   });
                                 },
@@ -173,11 +174,11 @@ class _YogaDetailsPageState extends State<YogaDetailsPage> {
                                 width: 100,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Colors.orangeAccent,
+                                  color: Color(0xFF7A9BEE),
                                 ),
                                 child: Center(
                                   child: TextButton(
-                                    child: Text("START",style:TextStyle(color: Colors.black, fontSize: 20),),
+                                    child: Text("START",style:TextStyle(color: Colors.white, fontSize: 20),),
                                     onPressed: (){
                                       Navigator.push(
                                         context,
@@ -202,22 +203,19 @@ class _YogaDetailsPageState extends State<YogaDetailsPage> {
                     SizedBox(height: 20.0),
                     Container(
                       child: SingleChildScrollView(
-                        child: Text(
-                          "\n1.Sit on the floor or on a mat with legs stretched out in front of you while keeping the spine erect.\n"
-                            "2.Bend the right knee and place it on the left thigh  and repeat the same step with the other leg.\n"
-                        "3.With both the legs crossed and feet placed on opposite thighs, place your hands on the knees in the mudra position.\n"
-                        "4.Keep the head straight and spine erect, and continue with long gentle breaths in and out.\n"
-                        ),
+                        padding: EdgeInsets.all(10.0),
+                        child: Text(widget.info),
                       ),
-                    height: MediaQuery.of(context).size.height,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                        border: Border.all(
+                      height: 380.0,
+                      width: 350.0,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          border: Border.all(
 
-                          width: 1.0,color: Colors.black,
-                        )
-                    ),
+                            width: 3.0,color: Color(0xFF7A9BEE),
+                          )
                       ),
+                    ),
                     SizedBox(height: 20.0),
                     // Padding(
                     //   padding: EdgeInsets.only(bottom:5.0),

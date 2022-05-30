@@ -34,16 +34,10 @@ class _AddTaskPageState extends State<AddTaskPage> {
         appBar: AppBar(
             elevation: 0,
             backgroundColor: Color(0xFF7A9BEE),
-            actions: [
-              Icon(
-                Icons.menu,
-                size : 40,
-              )
-            ],
-
-            title: Center(child: Text("Add Tasks",
+            title: Center(child: Text("Add Tasks       ",
               style: TextStyle(
-                  fontSize: 30
+                  fontSize: 25.0
+
               ),))
         ),
         body: SingleChildScrollView(

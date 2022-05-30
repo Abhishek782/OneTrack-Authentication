@@ -98,7 +98,7 @@ class _BreakfastState extends State<Breakfast> {
                           _buildFoodItem('idli1', 'Idli', 39.00,0.00,"AD",context),
                           _buildFoodItem('kd1', 'Sprouts', 190.00,0.00,"A,B6",context),
                           _buildFoodItem('8', 'Misal pav', 290.00,0.00,"AD",context),
-                          _buildFoodItem('pb1', 'Pav-bhaji', 000.00,0.00,"AD",context),
+                          _buildFoodItem('pavbh1', 'Pav-bhaji', 400.00,0.00,"AD",context),
                           _buildFoodItem('upma1', 'Upma', 17.00,0.00,"AD",context),
                         ],
                         ),
