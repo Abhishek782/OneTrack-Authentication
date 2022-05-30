@@ -426,7 +426,6 @@ class _RoutinePageState extends State<RoutinePage> {
                   break;
                 case 3:
                   Fluttertoast.showToast(msg:"U are on the  Routine page");
-
                   break;
                 case 4:
                   Navigator.pop(context);
