@@ -289,7 +289,7 @@ class _FitnessPageState extends State<FitnessPage> {
         bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             iconSize: 28,
-            backgroundColor: Colors.indigo,
+            backgroundColor: Color(0xFF21BFBD),
             landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
             selectedItemColor: Colors.white70,
             unselectedItemColor: Colors.black,
@@ -336,7 +336,7 @@ class _FitnessPageState extends State<FitnessPage> {
                 navigationIndex = index;
                 switch (navigationIndex) {
                   case 0:
-                    SnackBar(content: Text("U are on the  Fitness"));
+                    Fluttertoast.showToast(msg:"U are on the Fitness Page");
                     break;
                   case 1:
                     Navigator.push(
