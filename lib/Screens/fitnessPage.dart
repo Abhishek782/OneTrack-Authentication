@@ -287,7 +287,7 @@ class _FitnessPageState extends State<FitnessPage> {
         bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             iconSize: 28,
-            backgroundColor: Colors.indigo,
+            backgroundColor: Color(0xFF21BFBD),
             landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
             selectedItemColor: Colors.white70,
             unselectedItemColor: Colors.black,

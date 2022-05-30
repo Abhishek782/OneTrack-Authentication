@@ -127,8 +127,10 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:mini_project_ui/Screens/upgradedr1.dart';
 
 import 'Routine_pages/add_task_bar.dart';
 import 'Routine_pages/list_item.dart';
@@ -138,6 +140,9 @@ import 'Routine_pages/add_task_bar.dart';
 import 'Routine_pages/list_item.dart';
 import 'Routine_pages/list_item_widget.dart';
 import 'Routine_pages/list_items.dart';
+import 'diet.dart';
+import 'fitnessPage.dart';
+import 'moneyPage.dart';
 
 TextStyle get subHeadingStyle{
   return GoogleFonts.lato(
@@ -171,7 +176,7 @@ class _RoutinePageState extends State<RoutinePage> {
   final List<ListItem> items = List.from(listItems);
   final listKey = GlobalKey<AnimatedListState>();
   DateTime _selectedDate = DateTime.now();
-
+  int navigationIndex = 0;
 
 
 
@@ -188,14 +193,6 @@ class _RoutinePageState extends State<RoutinePage> {
         appBar: AppBar(
             backgroundColor: Color(0xFF21BFBD),
             elevation: 0,
-            actions: [
-              Icon(
-                Icons.menu,
-                size : 40,
-              )
-            ],
-
-
             title: Center(child: Text("Daily Routine",))
         ),
         body: SingleChildScrollView(
@@ -203,7 +200,7 @@ class _RoutinePageState extends State<RoutinePage> {
             children: [
               // _addTaskBar(),
               Container(
-                height: size.height*0.2+50,
+                height: size.height/3,
                 child: Stack(
                   children: <Widget>[
                     Container(
@@ -220,7 +217,7 @@ class _RoutinePageState extends State<RoutinePage> {
                           children: [
                             Container(
 
-                              margin: EdgeInsets.symmetric(vertical: 10.0),
+                              margin: EdgeInsets.symmetric(vertical: 5.0),
                               child: Column(
 
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -334,7 +331,8 @@ class _RoutinePageState extends State<RoutinePage> {
                 height: 10,
               ),
               Container(
-                height: MediaQuery.of(context).size.height-339+100,
+                margin: EdgeInsets.only(top: 8),
+                height: MediaQuery.of(context).size.height*0.6,
                 child: AnimatedList(
                   key: listKey,
                   initialItemCount: items.length,
@@ -357,7 +355,77 @@ class _RoutinePageState extends State<RoutinePage> {
             child: Icon(Icons.add),
             backgroundColor: Color(0xFF21BFBD),
             onPressed: ()=>insertItem()
-        ));
+        ),
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: 3,
+          type: BottomNavigationBarType.fixed,
+          iconSize: 28,
+          backgroundColor: Color(0xFF21BFBD),
+          landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.black,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.fitness_center_rounded,
+                  color: Colors.black,
+                ),
+                label: 'Fitness'),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.fastfood_rounded,
+                  color: Colors.black,
+                ),
+                label: 'Diet'),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.attach_money_outlined,
+                  color: Colors.black,
+                ),
+                label: 'Money'),
+
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.timer_rounded,
+                  color: Colors.white54,
+                ),
+                label: 'Routine'),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  color: Colors.black,
+                ),
+
+                label: 'Home'),
+            // BottomNavigationBarItem(icon: Icon(),label: Icons.lunch_dining_outlined),
+          ],
+          onTap:(int index)
+          {
+            setState(() {
+              navigationIndex=index;
+              switch(navigationIndex)
+              {
+                case 0:
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(context)=>FitnessPage()), (route) => (route.isFirst));
+                  break;
+                case 1:
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(context)=>UpDiet()), (route) => (route.isFirst));
+                  break;
+                case 2:
+                  Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(context)=>MoneyPage()), (route) => (route.isFirst));
+                  break;
+                case 3:
+                  Fluttertoast.showToast(msg:"U are on the  Routine page");
+
+                  break;
+                case 4:
+                  Navigator.pop(context);
+              }
+            }
+            );
+          }
+      ),
+    );
   }
   void insertItem(){
     final newIndex = 1;
