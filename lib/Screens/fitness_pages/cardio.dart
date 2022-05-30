@@ -91,14 +91,14 @@ class _CardioPageState extends State<CardioPage> {
                       Container(
                         height: MediaQuery.of(context).size.height - 250.0,
                         child: ListView(children: [
-                          _buildCardio(context,'jogging2', 'Jogging','Breath'),
-                          _buildCardio(context,'high_knees', 'High Knees','Breath'),
-                          _buildCardio(context,'jump_rope', 'Jumping Slams','Breath'),
-                          _buildCardio(context,'pull_up', 'Pull Ups','Breath'),
-                          _buildCardio(context,'work_cycle', 'Exercise Cycle','Breath'),
-                          _buildCardio(context,'cycling2', 'Cycling','Breath'),
-                          _buildCardio(context,'crunches2', 'Crunches','Breath'),
-                          _buildCardio(context,'ball_situps', 'Weight Situps','Breath'),
+                          _buildCardio(context,'jogging2', 'Jogging','Breath','hhh'),
+                          _buildCardio(context,'high_knees', 'High Knees','Breath','hhh'),
+                          _buildCardio(context,'jump_rope', 'Jumping Slams','Breath','hhh'),
+                          _buildCardio(context,'pull_up', 'Pull Ups','Breath','hhh'),
+                          _buildCardio(context,'work_cycle', 'Exercise Cycle','Breath','hhh'),
+                          _buildCardio(context,'cycling2', 'Cycling','Breath','hhh'),
+                          _buildCardio(context,'crunches2', 'Crunches','Breath','hhh'),
+                          _buildCardio(context,'ball_situps', 'Weight Situps','Breath','hhh'),
                           // _buildPositions(context,'Dal', 'Dal'),
                           // _buildPositions(context,'rice', 'Rice'),
                           // _buildPositions(context,'5', 'Sprouts'),
@@ -288,14 +288,14 @@ class _CardioListState extends State<CardioList> {
         ));
   }
 }
-Widget _buildCardio(BuildContext context, String img, String cardioName,String CardioSubtitle) {
+Widget _buildCardio(BuildContext context, String img, String cardioName,String CardioSubtitle, String info) {
 
   return Padding(
       padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
       child: InkWell(
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => YogaDetailsPage(heroTag: "images/$img.jpg", yogaName: cardioName)
+                builder: (context) => CardioDetailsPage(heroTag: "images/$img.jpg", cardioName: cardioName,cardioinfo: info,)
             ));
           },
           child: Row(
@@ -342,7 +342,7 @@ Widget _buildCardio(BuildContext context, String img, String cardioName,String C
                   color: Colors.black,
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => YogaDetailsPage(heroTag: "images/$img.jpg", yogaName: cardioName)
+                        builder: (context) => CardioDetailsPage(heroTag: "images/$img.jpg", cardioName: cardioName,cardioinfo: info)
                     ));
                   }
               )

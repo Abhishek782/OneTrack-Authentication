@@ -5,12 +5,14 @@ import 'package:mini_project_ui/Screens/fitness_pages/yoga.dart';
 import 'package:mini_project_ui/Screens/fitness_pages/cardio.dart';
 import 'package:mini_project_ui/Screens/first_screen.dart';
 import '../fitnessPage.dart';
+import 'package:mini_project_ui/Screens/timer.dart';
+
 
 class CardioDetailsPage extends StatefulWidget {
   final heroTag;
   final cardioName;
-
-  CardioDetailsPage({this.heroTag, this.cardioName});
+  final cardioinfo;
+  CardioDetailsPage({this.heroTag, this.cardioName, this.cardioinfo});
 
   @override
   _CardioDetailsPageState createState() => _CardioDetailsPageState();
@@ -159,10 +161,53 @@ class _CardioDetailsPageState extends State<CardioDetailsPage> {
                               )
                             ],
                           ),
-                        )
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(left: 100,top: 20,right:10 ,bottom: 10),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 50,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Color(0xFF7A9BEE),
+                                ),
+                                child: Center(
+                                  child: TextButton(
+                                    child: Text("START",style:TextStyle(color: Colors.white, fontSize: 20),),
+                                    onPressed: (){
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => CountdownPage(),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                     SizedBox(height: 20.0),
+                    Container(
+                      child: SingleChildScrollView(
+                        padding: EdgeInsets.all(10.0),
+
+                      ),
+                      height: 380.0,
+                      width: 350.0,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          border: Border.all(
+
+                            width: 3.0,color: Color(0xFF7A9BEE),
+                          )
+                      ),
+                    ),
                     Container(
                         height: 150.0,
                         child: ListView(
@@ -178,32 +223,14 @@ class _CardioDetailsPageState extends State<CardioDetailsPage> {
                         )
                     ),
                     SizedBox(height: 20.0),
-                    Padding(
-                      padding: EdgeInsets.only(bottom:5.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0), topRight: Radius.circular(10.0), bottomLeft: Radius.circular(25.0), bottomRight: Radius.circular(25.0)),
-                            color: Colors.black
-                        ),
-                        height: 50.0,
-                        child: Center(
-                          child: Text(
-                              'save',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'Montserrat'
-                              )
-                          ),
-                        ),
-                      ),
-                    )
+
                   ],
                 ))
           ])
         ]));
   }
 
-  Widget _buildInfoCard(String cardTitle, String info, String unit) {
+  Widget _buildInfoCard(String cardTitle, String info, String unit,String cardioinfo) {
     return InkWell(
         onTap: () {
           selectCard(cardTitle);

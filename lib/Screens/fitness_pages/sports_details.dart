@@ -96,7 +96,6 @@ class _SportDetailsPageState extends State<SportDetailsPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Container(height: 25.0, color: Colors.grey, width: 1.0),
                         Container(
                           width: 125.0,
                           height: 40.0,
@@ -169,11 +168,11 @@ class _SportDetailsPageState extends State<SportDetailsPage> {
                                 width: 100,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Colors.orangeAccent,
+                                  color: Color(0xFF7A9BEE),
                                 ),
                                 child: Center(
                                   child: TextButton(
-                                    child: Text("START",style:TextStyle(color: Colors.black, fontSize: 20),),
+                                    child: Text("START",style:TextStyle(color: Colors.white, fontSize: 20),),
                                     onPressed: (){
                                       Navigator.push(
                                         context,
@@ -189,6 +188,21 @@ class _SportDetailsPageState extends State<SportDetailsPage> {
                           ),
                         ),
                       ],
+                    ),
+                    Container(
+                      child: SingleChildScrollView(
+                        padding: EdgeInsets.all(10.0),
+
+                      ),
+                      height: 380.0,
+                      width: 350.0,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          border: Border.all(
+
+                            width: 3.0,color: Color(0xFF7A9BEE),
+                          )
+                      ),
                     ),
                     SizedBox(height: 20.0),
                     Container(
@@ -206,25 +220,7 @@ class _SportDetailsPageState extends State<SportDetailsPage> {
                         )
                     ),
                     SizedBox(height: 20.0),
-                    Padding(
-                      padding: EdgeInsets.only(bottom:5.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(topLeft: Radius.circular(10.0), topRight: Radius.circular(10.0), bottomLeft: Radius.circular(25.0), bottomRight: Radius.circular(25.0)),
-                            color: Colors.black
-                        ),
-                        height: 50.0,
-                        child: Center(
-                          child: Text(
-                              'save',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: 'Montserrat'
-                              )
-                          ),
-                        ),
-                      ),
-                    )
+
                   ],
                 ))
           ])
