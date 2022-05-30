@@ -37,13 +37,6 @@ class _DetailsPageState extends State<DetailsPage> {
                   fontSize: 18.0,
                   color: Colors.white)),
           centerTitle: true,
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.more_horiz),
-              onPressed: () {},
-              color: Colors.white,
-            )
-          ],
         ),
         body: ListView(children: [
           Stack(children: [
@@ -69,6 +62,10 @@ class _DetailsPageState extends State<DetailsPage> {
                     tag: widget.heroTag,
                     child: Container(
                         decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(25.0),
+                            topRight:Radius.circular(25.0),
+                          ),
                             image: DecorationImage(
                                 image: AssetImage(widget.heroTag),
                                 fit: BoxFit.cover)),
@@ -171,11 +168,11 @@ class _DetailsPageState extends State<DetailsPage> {
                           scrollDirection: Axis.horizontal,
 
                           children: <Widget>[
-                            _buildInfoCard('WEIGHT', '${widget.weight}', 'G'),
+                            // _buildInfoCard('WEIGHT', '${widget.weight}', 'G'),
                             SizedBox(width: 10.0),
-                            _buildInfoCard('CALORIES', '${widget.foodCal}', 'CAL'),
+                            Center(child: _buildInfoCard('CALORIES', '${widget.foodCal}', 'CAL')),
                             SizedBox(width: 10.0),
-                            _buildInfoCard('VITAMINS', widget.vit, 'VIT'),
+                            // _buildInfoCard('VITAMINS', widget.vit, 'VIT'),
                           ],
                         )
                     ),
@@ -226,7 +223,7 @@ class _DetailsPageState extends State<DetailsPage> {
 
             ),
             height: 100.0,
-            width: 100.0,
+            width: MediaQuery.of(context).size.width-75,
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
