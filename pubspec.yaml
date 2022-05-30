@@ -23,6 +23,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  scoped_model: ^1.0.1
+  get:
+  intl:
+  google_fonts:
+  date_picker_timeline:
 
 
 
