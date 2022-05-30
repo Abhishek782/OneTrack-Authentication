@@ -193,7 +193,17 @@ class _RoutinePageState extends State<RoutinePage> {
         appBar: AppBar(
             backgroundColor: Color(0xFF21BFBD),
             elevation: 0,
-            title: Center(child: Text("Daily Routine",))
+            title: Center(child: Text("Daily Routine         ",style: TextStyle(fontSize: 25),)),
+          toolbarHeight: 60,
+          leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
+          ),
         ),
         body: SingleChildScrollView(
           child: Column(

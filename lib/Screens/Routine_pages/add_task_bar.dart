@@ -38,7 +38,17 @@ class _AddTaskPageState extends State<AddTaskPage> {
               style: TextStyle(
                   fontSize: 25.0
 
-              ),))
+              ),)),
+          toolbarHeight: 60,
+          leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
+          ),
         ),
         body: SingleChildScrollView(
           child: Container(
