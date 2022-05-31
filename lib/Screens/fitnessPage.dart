@@ -99,15 +99,19 @@ class _FitnessPageState extends State<FitnessPage> {
             // SizedBox(height: 50.0),
             Padding(
               padding: EdgeInsets.only(left: 40.0),
-              child: Row(
+              child: Column(
                 children: <Widget>[
                   Text('Fitness',
                       style: TextStyle(
                           fontFamily: 'Montserrat',
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 30.0)),
-                  SizedBox(width: 5.0),
+                          fontSize: 35.0)),
+                  Text('key to good health',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat',
+                          color: Colors.white,
+                          fontSize: 25.0)),
                   // Text('\n\nfood items',
                   //     style: TextStyle(
                   //         fontFamily: 'Montserrat',
@@ -116,6 +120,7 @@ class _FitnessPageState extends State<FitnessPage> {
                 ],
               ),
             ),
+            SizedBox(width: 50.0,),
             Positioned(
                 top: 88.0,
                 child: Container(
@@ -154,7 +159,7 @@ class _FitnessPageState extends State<FitnessPage> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                      image: AssetImage('images/yog.jpg'),
+                                      image: AssetImage('images/yogamain.jpg'),
                                     ),
                                     color: Colors.white,
                                     border: Border(
@@ -181,7 +186,7 @@ class _FitnessPageState extends State<FitnessPage> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                      image: AssetImage('images/run.jpg'),
+                                      image: AssetImage('images/cardiomain.jpg'),
                                     ),
                                     color: Colors.white,
                                     border: Border(
@@ -208,7 +213,7 @@ class _FitnessPageState extends State<FitnessPage> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage('images/jump.jpg')),
+                                        image: AssetImage('images/sportsmain.jpg')),
                                     color: Colors.white,
                                     border: Border(
                                       top: BorderSide(
@@ -234,7 +239,7 @@ class _FitnessPageState extends State<FitnessPage> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage('images/weight.jpg')),
+                                        image: AssetImage('images/weightmain.jpg')),
                                     color: Colors.white,
                                     border: Border(
                                       top: BorderSide(
