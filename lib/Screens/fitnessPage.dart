@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:lottie/lottie.dart';
 import 'package:mini_project_ui/Screens/diet.dart';
 import 'package:mini_project_ui/Screens/first_screen.dart';
 import 'package:mini_project_ui/Screens/moneyPage.dart';
@@ -105,7 +106,7 @@ class _FitnessPageState extends State<FitnessPage> {
                           fontFamily: 'Montserrat',
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 35.0)),
+                          fontSize: 30.0)),
                   SizedBox(width: 5.0),
                   // Text('\n\nfood items',
                   //     style: TextStyle(
@@ -132,6 +133,7 @@ class _FitnessPageState extends State<FitnessPage> {
                     // crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Padding(padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 80),),
+                      // Lottie.asset('assets/yoga.json'),
                       // SizedBox(
                       //   height: 150,
                       // ),

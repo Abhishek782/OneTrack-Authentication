@@ -18,6 +18,19 @@ class _YogaPageState extends State<YogaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(backgroundColor:  Color(0xFF21BFBD),
+        elevation: 0,
+        toolbarHeight: 40,
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
+        ),
+      ),
       backgroundColor: Color(0xFF21BFBD),
       body: ListView(
         children: <Widget>[
@@ -26,36 +39,13 @@ class _YogaPageState extends State<YogaPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.arrow_back_ios),
-                  color: Colors.white,
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                Container(
-                    width: 125.0,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        IconButton(
-                          icon: Icon(Icons.search),
-                          color: Colors.white,
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: Icon(Icons.menu),
-                          color: Colors.white,
-                          onPressed: (){},
-                        )
-                      ],
-                    ))
+
               ],
             ),
           ),
           SizedBox(height: 10.0),
           Padding(
-            padding: EdgeInsets.only(left: 40.0),
+            padding: EdgeInsets.only(left: 40.0,bottom: 20.0),
             child: Row(
               children: <Widget>[
                 Text('Asanas',
@@ -73,7 +63,7 @@ class _YogaPageState extends State<YogaPage> {
               ],
             ),
           ),
-          SizedBox(height: 20.0),
+          // SizedBox(height: 20.0),
           Container(
             height: MediaQuery.of(context).size.height - 185.0,
             decoration: BoxDecoration(
@@ -121,8 +111,8 @@ class _YogaPageState extends State<YogaPage> {
                               '\n2.Stretch your arm to place your palms flat against the floor in front. Keep your fingers spread. Bend your arms slightly at the elbows.\n'
                               '\n3.Raise your hips so that your body tilts forward, bringing your head down halfway.\n'
                               '\n4.Let your knees be supported by your upper arms.\n'),
-                          // _buildPositions(context,'4', 'Medu vada(1pc)'),
-                          // _buildPositions(context,'Dal', 'Dal'),
+                          _buildPositions(context,'warrior1', 'Virbhadrasana I','For digestion','hh'),
+                          _buildPositions(context,'warrior2', 'Virbhadrasana II','For digestion','hh'),
                           // _buildPositions(context,'rice', 'Rice'),
                           // _buildPositions(context,'5', 'Sprouts'),
                           // _buildPositions(context,'6', 'Halwa/Shira'),
