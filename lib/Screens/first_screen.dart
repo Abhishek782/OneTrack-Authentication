@@ -19,177 +19,175 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            title: Center(
-              child: Text('Profile Manager',
-                  style: TextStyle(
-                    fontStyle: FontStyle.italic,
-                    fontFamily: 'RobotoSlab',
-                    fontSize: 30,
-                    color: Colors.black,
-                  )),
-            ),
-            flexibleSpace: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [
-                      Colors.greenAccent,
-                      Colors.black12,
-                    ],
-                    begin: const FractionalOffset(0.0, 0.0),
-                    end: const FractionalOffset(1.0, 0.0),
-                    stops: [0.0, 1.0],
-                    tileMode: TileMode.clamp),
-              ),
-            ),
+      home: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Colors.greenAccent,
+                  Colors.indigo,
+                ],
+              )
           ),
-          body: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Colors.greenAccent,
-                    Colors.indigo,
-                  ],
-                )),
-            child: ListView(
-              physics: BouncingScrollPhysics(),
-              children: <Widget>[
-                SizedBox(
-                  height: 15,
+          child: ListView(
+            physics: BouncingScrollPhysics(),
+            children: <Widget>[
+              SizedBox(
+                height: 15,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 40.0),
+                child: Container(
+                  child: Row(
+                    children: <Widget>[
+                      Text('One',
+                          style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 55.0)),
+                      SizedBox(width: 5.0),
+                      Text('Track',
+                          style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              color: Colors.white,
+                              fontSize: 30
+                              ..0))
+                    ],
+                  ),
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  height: 70,
-                  width: 100,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.black87,
+              ),
+              SizedBox(height: 25,),
+              // Container(
+              //   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              //   height: 70,
+              //   width: 100,
+              //   decoration: BoxDecoration(
+              //       border: Border.all(
+              //         color: Colors.black87,
+              //       ),
+              //       borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              // ),
+              Container(
+                height: MediaQuery.of(context).size.height*0.25,
+                // width: 100,
+                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  image: DecorationImage(
+                    image: AssetImage('images/2.png'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FitnessPage(),
                       ),
-                      borderRadius: BorderRadius.all(Radius.circular(10.0))),
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height*0.25,
-                  // width: 100,
-                  margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    image: DecorationImage(
-                      image: AssetImage('images/2.png'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => FitnessPage(),
-                        ),
-                      );
-                    }, // Handle your callback.
-                    splashColor: Colors.black.withOpacity(0.3),
-                    child: Ink(
-                      height: 100,
-                      width: 100,
-                    ),
+                    );
+                  }, // Handle your callback.
+                  splashColor: Colors.black.withOpacity(0.3),
+                  child: Ink(
+                    height: 100,
+                    width: 100,
                   ),
                 ),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  height: 208,
-                  // width: 100,
-                  margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    image: DecorationImage(
-                      image: AssetImage('images/1.png'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => UpDiet(),
-                        ),
-                      );
-                    }, // Handle your callback.
-                    splashColor: Colors.black.withOpacity(0.3),
-                    child: Ink(
-                      height: 100,
-                      width: 100,
-                    ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 208,
+                // width: 100,
+                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  image: DecorationImage(
+                    image: AssetImage('images/1.png'),
+                    fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height*0.25,
-                  // width: 100,
-                  margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    image: DecorationImage(
-                      image: AssetImage('images/4.png'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MoneyPage(),
-                        ),
-                      );
-                    }, // Handle your callback.
-                    splashColor: Colors.black.withOpacity(0.3),
-                    child: Ink(
-                      height: 100,
-                      width: 100,
-                    ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => UpDiet(),
+                      ),
+                    );
+                  }, // Handle your callback.
+                  splashColor: Colors.black.withOpacity(0.3),
+                  child: Ink(
+                    height: 100,
+                    width: 100,
                   ),
                 ),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height*0.25,
-                  // width: 100,
-                  margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                    image: DecorationImage(
-                      image: AssetImage('images/3.png'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => RoutinePage(),
-                        ),
-                      );
-                    }, // Handle your callback.
-                    splashColor: Colors.black.withOpacity(0.3),
-                    child: Ink(
-                      height: 100,
-                      width: 100,
-                    ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height*0.25,
+                // width: 100,
+                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  image: DecorationImage(
+                    image: AssetImage('images/4.png'),
+                    fit: BoxFit.cover,
                   ),
                 ),
-              ],
-            ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MoneyPage(),
+                      ),
+                    );
+                  }, // Handle your callback.
+                  splashColor: Colors.black.withOpacity(0.3),
+                  child: Ink(
+                    height: 100,
+                    width: 100,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height*0.25,
+                // width: 100,
+                margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  image: DecorationImage(
+                    image: AssetImage('images/3.png'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RoutinePage(),
+                      ),
+                    );
+                  }, // Handle your callback.
+                  splashColor: Colors.black.withOpacity(0.3),
+                  child: Ink(
+                    height: 100,
+                    width: 100,
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
