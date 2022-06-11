@@ -53,8 +53,7 @@ class _MyAppState extends State<MyApp> {
                           style: TextStyle(
                               fontFamily: 'Montserrat',
                               color: Colors.white,
-                              fontSize: 30
-                              ..0))
+                              fontSize: 30.0))
                     ],
                   ),
                 ),
