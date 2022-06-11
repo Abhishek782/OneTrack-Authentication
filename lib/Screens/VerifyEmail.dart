@@ -6,7 +6,6 @@ import 'package:lottie/lottie.dart';
 import 'package:mini_project_ui/Screens/Login.dart';
 import 'package:mini_project_ui/Screens/signup_screen.dart';
 import 'package:email_auth/email_auth.dart';
-import 'package:mini_project_ui/screens/signup_screen.dart';
 
 
 class emailScreen extends StatefulWidget {
@@ -66,7 +65,7 @@ class _emailScreenState extends State<emailScreen> {
         userOtp: otpController.value.text);
     if(result==true)
       {
-        Navigator.push(context, MaterialPageRoute(builder: (_) => SignUpScreen()));
+        Navigator.push(context, MaterialPageRoute(builder: (_) => Signup()));
       }
   }
 

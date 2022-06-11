@@ -177,6 +177,7 @@
 //----------------------------------------------------------------------
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mini_project_ui/Screens/HomeScreen.dart';
 import 'Login.dart';
 
 class Signup extends StatefulWidget {

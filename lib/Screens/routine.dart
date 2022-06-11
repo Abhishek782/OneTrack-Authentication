@@ -140,7 +140,6 @@ import 'Routine_pages/add_task_bar.dart';
 import 'Routine_pages/list_item.dart';
 import 'Routine_pages/list_item_widget.dart';
 import 'Routine_pages/list_items.dart';
-import 'diet.dart';
 import 'fitnessPage.dart';
 import 'moneyPage.dart';
 

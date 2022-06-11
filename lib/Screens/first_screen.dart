@@ -1,4 +1,3 @@
-import 'package:mini_project_ui/Screens/diet.dart';
 import 'package:mini_project_ui/Screens/fitnessPage.dart';
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';

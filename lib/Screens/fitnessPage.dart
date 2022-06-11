@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:lottie/lottie.dart';
-import 'package:mini_project_ui/Screens/diet.dart';
 import 'package:mini_project_ui/Screens/first_screen.dart';
 import 'package:mini_project_ui/Screens/moneyPage.dart';
 import 'package:mini_project_ui/Screens/routine.dart';
